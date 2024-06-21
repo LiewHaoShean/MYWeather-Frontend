@@ -36,3 +36,40 @@
     transform: rotate(360deg);
   }
 }
+
+textarea {
+  border: none;
+  overflow: auto;
+  outline: none;
+
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+
+  resize: none; /*remove the resize handle on the bottom right*/
+}
+
+input:focus, textarea:focus, select:focus {
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+.input-code-container {
+  @apply flex flex-col items-start;
+}
+
+.input-code-label {
+  @apply mb-4;
+}
+
+.input-code-inputs {
+  @apply flex;
+}
+
+.input-code-input {
+  @apply w-10 h-14 text-3xl text-center border-2 border-gray-700 rounded-lg mx-1 focus:outline-none;
+}
+
+.input-code-input:nth-child(3n) {
+  @apply mr-6;
+}

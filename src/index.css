@@ -1,3 +1,14 @@
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lobster&family=Poetsen+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Teko:wght@300..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -10,4 +21,40 @@ body {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+
+.button-89 {
+  @apply relative px-6 py-2.5 text-lg font-medium text-[#373B44] border-0 outline-none transition duration-300 ease-linear cursor-pointer bg-blue-100;
+
+  --b: 3px;
+  --s: 0.45em;
+  --color: rgb(219 234 254);
+  --_p: var(--s);
+
+  padding: calc(0.5em + var(--s)) calc(0.9em + var(--s));
+  background: conic-gradient(from 90deg at var(--b) var(--b), transparent 90deg, var(--color) 0)
+    var(--_p) var(--_p) / calc(100% - var(--b) - 2 * var(--_p)) calc(100% - var(--b) - 2 * var(--_p));
+  outline: var(--b) solid transparent;
+  outline-offset: 0.6em;
+
+  &:hover,
+  &:focus-visible {
+    --_p: 0px;
+    outline-color: var(--color);
+    outline-offset: 0.05em;
+  }
+
+  &:active {
+    background: var(--color);
+    color: #fff;
+  }
+}
+
+.rotate-icon {
+  @apply transition-transform duration-500 ease-in-out;
+}
+
+.group:hover .rotate-icon {
+  @apply transform rotate-360;
 }
